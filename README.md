@@ -52,7 +52,7 @@ They can go through all files in a folder and count the occurrence of each tag o
 ## Install
 
 ```bash
-pip install annotated_images
+pip install git+https://github.com/zeppehpt1/imageanno.git
 ```
 
 ### Module
