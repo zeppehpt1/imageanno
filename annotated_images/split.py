@@ -18,15 +18,15 @@ def list_files(directory):
     """Returns files in a given directory
     Default only splits annotated images, if no annotations are found then all images are split.
     """
-    files = glob.glob(os.path.join(directory, '*.json'))
-    if len(files) == 0:
-        files = glob.glob(os.path.join(directory, '*.xml'))
-    if len(files) == 0:
-        files = glob.glob(os.path.join(directory, '*.*'))
+    files = glob.glob(os.path.join(directory, '*.*'))
     return files
 
+def check_float(ratio):
+    if 0.9 < sum(ratio) < 1:
+        ratio = 1
+    return ratio
 
-def split(input_dir, output_dir='output', seed=1337, ratio=(.8, .1, .1)):
+def split(input_dir, output_dir, seed, ratio):
     """Copies files from input dir to folders in output dir
 
     Keeps the annotation data together with the images while splitting. 
@@ -41,7 +41,8 @@ def split(input_dir, output_dir='output', seed=1337, ratio=(.8, .1, .1)):
     Returns:
         dict with the count of the number of images in each folder
     """
-    assert sum(ratio) == 1
+    ratio_raw = check_float(ratio)
+    assert sum(ratio_raw) == 1
     assert len(ratio) in (2, 3)
 
     return split_ratio(input_dir, output_dir, ratio, seed)
