@@ -12,7 +12,7 @@ classifiers = [
     'License :: OSI Approved :: MIT License',
     'Topic :: Utilities']
 
-setup(name='split-images-with-annotations',
+setup(name='imageanno',
       version='0.1.5',
       description='Split training data images into training, validation and test (dataset) folders.',
       long_description=long_description,
