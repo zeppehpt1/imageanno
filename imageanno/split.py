@@ -22,9 +22,8 @@ def list_files(directory):
     return files
 
 def check_float(ratio):
-    if 0.9 < sum(ratio) < 1:
-        ratio = 1
-    return ratio
+    if 0.99 < sum(ratio) < 1:
+        return 1
 
 def split(input_dir, output_dir, seed, ratio):
     """Copies files from input dir to folders in output dir
@@ -41,8 +40,8 @@ def split(input_dir, output_dir, seed, ratio):
     Returns:
         dict with the count of the number of images in each folder
     """
-    ratio_raw = check_float(ratio)
-    assert sum(ratio_raw) == 1
+    if check_float(ratio) != 1:
+        assert sum(ratio) == 1
     assert len(ratio) in (2, 3)
 
     return split_ratio(input_dir, output_dir, ratio, seed)
