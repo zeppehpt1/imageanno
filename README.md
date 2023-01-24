@@ -61,19 +61,19 @@ pip install annotated_images
 import annotated_images
 
 # To only split into training and validation set, set a tuple to `ratio`, i.e, `(.8, .2)`.
-annotated_images.split('input_folder', output_dir='output', seed=1337, ratio=(.8, .1, .1))
+imageanno.split('input_folder', 'output_folder', seed=1337, ratio=(.7, .2, .1))
 ```
 
 ```python
 import annotated_images
 
 # Returns total count of 'tag' found in all json files in 'path'
-annotated_images.findTagsJson('path', 'tag')
+imageanno.findTagsJson('path', 'tag')
 
 # Returns total count of 'tag' found in all xml files in 'path'
-annotated_images.findTagsXml('path', 'tag')
+imageanno.findTagsXml('path', 'tag')
 ```
 
 ### Ref
-this package was forked from https://github.com/jfilter/split-folders
+this package was forked from https://github.com/SaberD/annotated-images
 and added the support for annotation files
