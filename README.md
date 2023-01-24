@@ -75,5 +75,4 @@ imageanno.findTagsXml('path', 'tag')
 ```
 
 ### Ref
-this package was forked from https://github.com/SaberD/annotated-images
-and added the support for annotation files
+this package was forked from https://github.com/SaberD/annotated-images to support different splits
