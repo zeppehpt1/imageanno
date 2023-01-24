@@ -58,14 +58,14 @@ pip install git+https://github.com/zeppehpt1/imageanno.git
 ### Module
 
 ```python
-import annotated_images
+import imageanno
 
 # To only split into training and validation set, set a tuple to `ratio`, i.e, `(.8, .2)`.
-imageanno.split('input_folder', 'output_folder', seed=1337, ratio=(.7, .2, .1))
+imageanno.split('input_folder', 'output_folder', seed=1337, ratio=(.7, .2, .1)) # train, test, valid
 ```
 
 ```python
-import annotated_images
+import imageanno
 
 # Returns total count of 'tag' found in all json files in 'path'
 imageanno.findTagsJson('path', 'tag')
